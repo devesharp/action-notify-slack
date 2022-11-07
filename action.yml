@@ -1,0 +1,18 @@
+name: 'Send message slack'
+description: ''
+inputs:
+  message:
+    description: 'message'
+runs:
+  using: "composite"
+  steps:
+    -   name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_USERNAME: '${{ env.APP_NAME }} - ${{ env.ENV }}'
+          SLACK_CHANNEL: devesharp
+          SLACK_COLOR: '${{ job.status }}'
+          SLACK_ICON: https://avatars.githubusercontent.com/u/59766749?s=400&u=de60999f2e40182b0d927f310ba814840c50e11c&v=4
+          SLACK_MESSAGE: ${{ inputs.message }}
+          SLACK_WEBHOOK: ${{ env.SLACK_WEBHOOK }}
+          MSG_MINIMAL: true
