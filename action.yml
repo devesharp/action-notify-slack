@@ -14,7 +14,7 @@ runs:
           SLACK_COLOR: '${{ job.status }}'
           SLACK_ICON: https://avatars.githubusercontent.com/u/59766749?s=400&u=de60999f2e40182b0d927f310ba814840c50e11c&v=4
           SLACK_MESSAGE: ${{ inputs.message }}
-          SLACK_TITLE: '${{ env.APP_NAME }} - ${{ env.ENV }}'
+          SLACK_TITLE: '${{ env.APP_NAME }}'
           SLACK_WEBHOOK: '${{ env.APP_NAME }} - ${{ env.SLACK_WEBHOOK }}'
           MSG_MINIMAL: true
           SLACK_FOOTER: ''
